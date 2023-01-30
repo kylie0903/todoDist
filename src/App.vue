@@ -1,12 +1,64 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
-    <router-link to="/project">Project</router-link> |
-    <router-link to="/todo">Todo</router-link>
-  </nav>
-  <router-view />
+  <tab />
+  <headerc />
+  <intro />
+  <about />
+  <project />
+  <cloning id="Webclon" />
+  <contact />
 </template>
+
+<script>
+import tab from "./components/tab.vue";
+import headerc from "./components/headerC.vue";
+import intro from "./components/intro.vue";
+import about from "./components/about.vue";
+import project from "./components/project.vue";
+import cloning from "./components/cloning.vue";
+import contact from "./components/contact.vue";
+
+export default {
+  name: "App",
+  components: {
+    tab,
+    intro,
+    about,
+    project,
+    cloning,
+    contact,
+    headerc,
+  },
+  // data() {
+  //   return {
+  //     isScrollDown: false, // v-show를 통해 맨위로 버튼을 등장시키는 변수
+  //     scrollTop: 0, // 스크롤 값 저장용
+  //     target: null, // 이벤트가 등록되는 변수
+  //   };
+  // },
+
+  // // 1번 가상 돔 마운트 시, 이벤트 등록
+  // mounted() {
+  //   this.target = document.querySelector("#target");
+  //   this.target.addEventListener("scroll", this.handleScroll);
+  // },
+
+  // // 3번 마운트 해제 전, 이벤트 삭제하기
+  // beforeUnmount() {
+  //   this.target.removeEventListener("scroll", this.handleScroll);
+  // },
+  // methods: {
+  //   // 2번 이벤트 액션
+  //   handleScroll: function (e) {
+  //     this.scrollTop = e.target.scrollTop;
+  //     if (this.scrollTop > 400) {
+  //       this.isScrollDown = true;
+  //     } else {
+  //       this.isScrollDown = false;
+  //     }
+  //   },
+  // },
+};
+</script>
 
 <style>
 #app {
@@ -15,18 +67,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  margin-top: 60px;
 }
 </style>
