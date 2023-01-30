@@ -3,5 +3,5 @@ module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,
      publicPath: "/todoDist/",
-     outputDir: "docs",
+     outputDir: "./docs"
 })
